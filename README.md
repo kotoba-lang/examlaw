@@ -40,7 +40,7 @@ officer may proceed*. `authorized?` is deliberately **not**
 `(empty? (:examlaw/unmet result))`; a caller who reaches for the convenient
 boolean gets the conservative answer rather than the flattering one.
 
-Replacing `authorized?` with `(empty? unmet)` turns **21 assertions** red,
+Replacing `authorized?` with `(empty? unmet)` turns **39 assertions** red,
 including the two tests that exist only to state this property. Measured, not
 estimated — see the last section.
 
@@ -115,23 +115,62 @@ jurisdictions on fourteen facets. It is not a statement about the law, and it
 is not a decision an official has made. Naming it `:permitted` would invite
 exactly the reading it must not have.
 
-## Three jurisdictions, and the pairs that point in opposite directions
+## Jurisdictions are paths, not codes
+
+`[:jp]`, `[:us]`, `[:eu]`, `[:eu :de]`, `[:eu :es]`. Rules attach at a level,
+and a path is checked against **every** level that has them.
+
+```clojure
+(law/levels [:eu :de])          ;; => [[:eu] [:eu :de]]
+```
+
+A German field audit is governed by German law. The same officer sitting in a
+Spanish joint audit is additionally capped by Directive 2011/16/EU, and
+`examination` returns the union of both levels' requirements.
+
+Two merge rules, and **a test found each of them by failing**:
+
+- **A parent contributes only the facets it actually read.** The Union marks
+  thirteen facets `:out-of-scope` because it has no examination power — that is
+  a statement about the Union, not about Germany. Propagating it would report
+  German re-examination law as deliberately out of scope when nobody has read
+  it. So `:out-of-scope` and `:silent` stop at the level that declared them.
+- **A child's `:silent` does not overwrite a parent's `:read`.** Germany's own
+  entry is silent on cross-border because the Directive is where that law
+  lives; the merged view must still read `:read`, sourced from `[:eu]`. A
+  child's `:out-of-scope` *does* win, because that is a decision rather than an
+  absence.
+
+And a level that is not catalogued is unchecked **at its own level**:
+
+```clojure
+(law/examination [:eu :fr] :exam/field-visit {})
+;; => {:examlaw/coverage :none :examlaw/unchecked [[:eu :fr]] …}
+```
+
+`[:eu]` being catalogued must never make France look covered.
+
+## Five jurisdictions, and the pairs that point in opposite directions
 
 | | read from source |
 |---|---|
 | `[:jp]` | 国税通則法 第74条の2・74条の7・74条の8・74条の9・74条の10・74条の11・74条の13・128条 |
 | `[:us]` | 26 U.S.C. §7602(a)(b)(c)(d), §7605(a)(b), §7521(a)(b)(d) |
 | `[:eu]` | Directive 2011/16/EU Art 11(1), 12(1), 12a(1), 12a(2) |
+| `[:eu :de]` | Abgabenordnung §§ 193, 196, 197, 198, 199, 200(3), 201, 202 |
+| `[:eu :es]` | Ley 58/2003 arts. 34.1.f, 141, 142.2, 147.2, 148.3, 150.1, 151.2, 151.3, 152.2, 156.1, 157.1, 157.2 |
 
 Every quote was fetched from the official publisher on 2026-08-22 — e-Gov 法令
 API for the Act (revision `337AC0000000066_20260624_508AC0000000046`), govinfo
-for the 2023 edition of the Code, EUR-Lex for the 2024-01-01 consolidation —
-and is a byte-exact span of what that endpoint returned. A test asserts that
+for the 2023 edition of the Code, EUR-Lex for the 2024-01-01 consolidation,
+gesetze-im-internet.de for the consolidated AO XML, and the BOE consolidated
+XML of Ley 58/2003 (`fecha_actualizacion 20260626132602`) — and is a byte-exact
+span of what that endpoint returned. A test asserts that
 `:source/elided?` matches whether the quote actually contains an ellipsis, so
 a silently shortened quote fails the build. It caught one on first run.
 
-**A checker that learned one of these jurisdictions and answered for the other
-would be confidently wrong, twice:**
+**A checker that learned one of these jurisdictions and answered for another
+would be confidently wrong, four times:**
 
 - **Criminal purpose.** 国税通則法第七十四条の八: the questioning-and-inspection
   power *「犯罪捜査のために認められたものと解してはならない」*. 26 U.S.C.
@@ -146,6 +185,53 @@ would be confidently wrong, twice:**
   第五項 permits further questioning *「新たに得られた情報に照らし非違があると
   認めるとき」* — an official's finding, not a written notice. **The defaults
   are opposite.**
+- **Advance notice.** AO § 197(1) requires the audit order, the expected start
+  and *die Namen der Prüfer* to be announced *angemessene Zeit vor Beginn*.
+  LGT art 151.2: *"la inspección podrá personarse **sin previa comunicación**"*.
+  Same continent, same Directive, opposite defaults — and for the identical
+  conduct Germany has to reach for the § 197(1) exception while Spain needs
+  nothing at all.
+- **Who may be field-audited.** AO § 193 is an **admissibility gate**: a field
+  audit is available against business, agricultural and professional taxpayers
+  and § 147a cases, and against anyone else only on one of three enumerated
+  conditions. Neither §7602(a) nor 74条の2 names a class of taxpayer at all —
+  they gate on the officer's purpose or finding of necessity. A checker keyed
+  on the Japanese or US shape would let a German audit of an ordinary employee
+  through; `examlaw` returns `:blocked`.
+- **Criminal purpose has a third answer.** 74条の8 forbids reading the power as
+  a criminal-investigation power; §7602(b) says the opposite in as many words;
+  AO § 201(2) does neither — it **reserves** the criminal assessment to a
+  separate procedure and requires that the taxpayer be told so. Two data points
+  looked like a binary. The third showed it was not.
+
+### Four questions nobody had asked
+
+Germany and Spain each answer something the first three jurisdictions were
+never asked, so the facet universe grew from fourteen to eighteen:
+
+| facet | who revealed it |
+|---|---|
+| `:exam/impartiality` | AO § 199(1) — *zugunsten wie zuungunsten des Steuerpflichtigen zu prüfen* |
+| `:exam/duration-limit` | LGT art 150.1 — twelve months, extendable once by twelve, extension *motivado* |
+| `:exam/premises-entry` | LGT art 142.2 and AO § 200(3) |
+| `:exam/commencement-information` | LGT art 147.2, and it re-filed US §7521(b)(1), which had been wrongly shelved under `:exam/representation` |
+
+**Every one of them made Japan and the United States score lower**, because
+each is a question about them that nobody has answered. Coverage falling on new
+knowledge is the correct direction; a denominator that only ever grew with the
+numerator would be measuring effort rather than ignorance.
+
+### Two more ways to not be a pass
+
+- **`:conduct-duty`** — a duty on the officer's own conduct that no record can
+  establish. AO § 199(1) is the case that forced it: examining *for and against*
+  the taxpayer is a legal obligation, not a discretionary finding, and calling
+  it `:official-determination` would have mislabelled it. With a complete German
+  record it is the only thing left standing, and it holds `authorized?` at false.
+- **`:unread-instrument`** — the statute routes the answer somewhere this catalog
+  has not been. LGT art 142.2 sends a constitutionally protected domicile to
+  art 113; 国税通則法第七十四条の九第一項第七号 sends the seventh notice item to
+  政令. Both are reported, neither is `:unmet`, and neither is ever a pass.
 
 The most valuable entries are absences that were searched for:
 
@@ -164,6 +250,15 @@ The most valuable entries are absences that were searched for:
   leaks a secret learned on duty. Refusing an examination is 第百二十八条第二号.
   This was reached for first, from recollection, and it was wrong — so it is
   recorded, because the wrong article is the one a reader arrives with.
+- **France and Italy are absent for retrieval reasons, not priority ones.** By
+  economic size France should have been read before Spain. Légifrance returned
+  **HTTP 403**; its bulk API needs a credential this workspace does not hold.
+  Bot protection was not circumvented and no secondary source was substituted —
+  one article paraphrased from a textbook would be indistinguishable in the data
+  from the byte-exact spans around it. Normattiva was worse: **HTTP 200, 373 KB,
+  and no law in it** — 9.5 KB of extractable site chrome. A pipeline that checks
+  status codes would have recorded that as a successful fetch. It was caught by
+  asserting on the presence of an article heading in the extracted text instead.
 
 ## The European Union has no power to examine anyone, and saying so is the entry
 
@@ -196,11 +291,20 @@ laws of their Member State."* The ceiling is the **lower** of two — so
 `joint-audit` takes two jurisdictions and refuses if either is missing:
 
 ```clojure
-(law/joint-audit [:jp] [:atlantis] :exam/inspect-books facts)
+(law/joint-audit [:eu :es] [:eu :fr] :exam/inspect-books facts)
 ;; => {:examlaw/coverage :none
-;;     :examlaw/unchecked [[:atlantis]]
+;;     :examlaw/unchecked [[:eu :fr]]
 ;;     :examlaw/reason :cross-border-needs-both-jurisdictions}
+
+(law/joint-audit [:eu :es] [:eu :de] :exam/inspect-books complete-record)
+;; => {:examlaw/coverage :checked
+;;     :examlaw/disposition :requires-official-determination}
 ```
+
+Until Germany and Spain were read, **the second call could not return anything
+but `:no-catalog`** — the Directive was catalogued and inert, because it is a
+rule about two Member States and there were none. That is why the two of them
+were read before larger economies outside the Union.
 
 An intersection with an unread set is not the unread set. Reporting the host's
 rules alone would silently drop the home-state cap that the Article exists to
@@ -215,19 +319,27 @@ catalog does not know about, so the denominator has to come from outside it.
 
 ```clojure
 (law/world-coverage #{[:jp] [:us] [:eu] [:de] [:fr] [:sg] [:br]})
-;; :examlaw/jurisdiction-fraction  [3 7]
-;; :examlaw/facet-total            [20 98]   the figure that does not flatter
+(law/world-coverage #{[:jp] [:us] [:eu] [:eu :de] [:eu :es]
+                      [:eu :fr] [:eu :it] [:gb] [:cn] [:in] [:br] [:kr]})
+;; :examlaw/jurisdiction-fraction  [5 12]
+;; :examlaw/facet-total            [43 216]   the figure that does not flatter
 ```
 
-`20/98` is lower than `3/7`, and that is the point. The first draft of this
-README wrote `30/98` from memory and the number was wrong — which is the same
-failure mode the library is built to prevent, one level up.
+`43/216` is lower than `5/12`, and that is the point. The first draft of this
+README wrote its facet total from memory and the number was wrong — which is
+the same failure mode the library is built to prevent, one level up. Every
+figure here is printed by the code.
 
 | | `:read` | `:partly-read` | `:out-of-scope` | `:silent` | of |
 |---|---|---|---|---|---|
-| `[:jp]` | 11 | 1 | 0 | 2 | 14 |
-| `[:us]` | 7 | 0 | 2 | 5 | 14 |
-| `[:eu]` | 1 | 0 | 13 | 0 | 14 |
+| `[:jp]` | 11 | 1 | 0 | 6 | 18 |
+| `[:us]` | 8 | 0 | 2 | 8 | 18 |
+| `[:eu]` | 1 | 0 | 13 | 4 | 18 |
+| `[:eu :de]` | 10 | 2 | 0 | 6 | 18 |
+| `[:eu :es]` | 8 | 2 | 2 | 6 | 18 |
+
+`[:eu :de]`'s tenth `:read` facet is `:exam/cross-border`, supplied by `[:eu]`;
+`:facet/from` on each entry records which level it came from.
  `depth` partitions the
 fourteen facets per jurisdiction into `:read`, `:partly-read`, `:out-of-scope`
 and `:silent`, and a test asserts they sum to `:of` for every jurisdiction.
@@ -278,14 +390,26 @@ nbb --classpath "src:test" run-tests.cljs    # primary
 clojure -M:test                              # JVM compat path, same file
 ```
 
-18 tests, 372 assertions. The suite has been shown to fail in both directions,
+24 tests, 670 assertions. The suite has been shown to fail in both directions,
 by actually breaking the library and reading the count:
 
 | change | result |
 |---|---|
 | unmodified | 0 failures |
-| `authorized?` → `(empty? (:examlaw/unmet result))` | **21 failures** |
-| `eval-clause` `:fact-true` on an absent key → `:no` | **6 failures** |
+| `authorized?` → `(empty? (:examlaw/unmet result))` | **39 failures** |
+| `eval-clause` `:fact-true` on an absent key → `:no` | **14 failures** |
+| a child's `:silent` overwrites a parent's `:read` | **1 failure** |
+| only the most specific level supplies requirements | **2 failures** |
+| `:unread-instrument` removed from `disposition` | **2 failures** |
+| `:conduct-duty` removed from `disposition` | **3 failures** |
+| `:two-jurisdiction` removed from `disposition` | **3 failures** |
 
-Both breaks were reverted and the suite returns to 0. A test that has only
-ever been green is not evidence that it discriminates.
+Every break was reverted and the suite returns to 0.
+
+**The last three rows are here because the first attempt at them stayed
+green.** Every catalogued examination action carries several
+non-machine-satisfiable requirements at once, so deleting any single bucket
+from `disposition` changed no catalog-driven answer. The buckets are now
+tested one at a time against a synthetic result, which is the only way to see
+which one did the work. A test that has only ever been green is not evidence
+that it discriminates.

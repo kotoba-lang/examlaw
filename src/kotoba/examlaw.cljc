@@ -396,6 +396,331 @@
     :source/revision "consolidated text of 2024-01-01"
     :source/publisher :eur-lex
     :source/url "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02011L0016-20240101"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-193-1
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 193 Abs. 1"
+    :source/heading "Zulässigkeit einer Außenprüfung"
+    :source/quote "Eine Außenprüfung ist zulässig bei Steuerpflichtigen, die einen gewerblichen oder land- und forstwirtschaftlichen Betrieb unterhalten, die freiberuflich tätig sind und bei Steuerpflichtigen im Sinne des § 147a."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-193-2
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 193 Abs. 2"
+    :source/heading "Zulässigkeit einer Außenprüfung"
+    :source/quote "Bei anderen als den in Absatz 1 bezeichneten Steuerpflichtigen ist eine Außenprüfung zulässig, 1. soweit sie die Verpflichtung dieser Steuerpflichtigen betrifft, für Rechnung eines anderen Steuern zu entrichten oder Steuern einzubehalten und abzuführen, 2. wenn die für die Besteuerung erheblichen Verhältnisse der Aufklärung bedürfen und eine Prüfung an Amtsstelle nach Art und Umfang des zu prüfenden Sachverhalts nicht zweckmäßig ist oder 3. wenn ein Steuerpflichtiger seinen Mitwirkungspflichten nach § 12 des Gesetzes zur Abwehr von Steuervermeidung und unfairem Steuerwettbewerb nicht nachkommt."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-196
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 196"
+    :source/heading "Prüfungsanordnung"
+    :source/quote "Die Finanzbehörde bestimmt den Umfang der Außenprüfung in einer schriftlich oder elektronisch zu erteilenden Prüfungsanordnung mit Rechtsbehelfsbelehrung nach § 356."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-197-1
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 197 Abs. 1"
+    :source/heading "Bekanntgabe der Prüfungsanordnung"
+    :source/quote "Die Prüfungsanordnung sowie der voraussichtliche Prüfungsbeginn und die Namen der Prüfer sind dem Steuerpflichtigen, bei dem die Außenprüfung durchgeführt werden soll, angemessene Zeit vor Beginn der Prüfung bekannt zu geben, wenn der Prüfungszweck dadurch nicht gefährdet wird. Der Steuerpflichtige kann auf die Einhaltung der Frist verzichten."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-197-2
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 197 Abs. 2"
+    :source/heading "Bekanntgabe der Prüfungsanordnung"
+    :source/quote "Auf Antrag der Steuerpflichtigen soll der Beginn der Außenprüfung auf einen anderen Zeitpunkt verlegt werden, wenn dafür wichtige Gründe glaubhaft gemacht werden."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-198
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 198"
+    :source/heading "Ausweispflicht, Beginn der Außenprüfung"
+    :source/quote "Die Prüfer haben sich bei Erscheinen unverzüglich auszuweisen. Der Beginn der Außenprüfung ist unter Angabe von Datum und Uhrzeit aktenkundig zu machen."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-199-1
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 199 Abs. 1"
+    :source/heading "Prüfungsgrundsätze"
+    :source/quote "Der Außenprüfer hat die tatsächlichen und rechtlichen Verhältnisse, die für die Steuerpflicht und für die Bemessung der Steuer maßgebend sind (Besteuerungsgrundlagen), zugunsten wie zuungunsten des Steuerpflichtigen zu prüfen."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-199-2
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 199 Abs. 2"
+    :source/heading "Prüfungsgrundsätze"
+    :source/quote "Der Steuerpflichtige ist während der Außenprüfung über die festgestellten Sachverhalte und die möglichen steuerlichen Auswirkungen zu unterrichten, wenn dadurch Zweck und Ablauf der Prüfung nicht beeinträchtigt werden."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-200-3
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 200 Abs. 3"
+    :source/heading "Mitwirkungspflichten des Steuerpflichtigen"
+    :source/quote "Die Außenprüfung findet während der üblichen Geschäfts- oder Arbeitszeit statt. Die Prüfer sind berechtigt, Grundstücke und Betriebsräume zu betreten und zu besichtigen. Bei der Betriebsbesichtigung soll der Betriebsinhaber oder sein Beauftragter hinzugezogen werden."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-201-1
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 201 Abs. 1"
+    :source/heading "Schlussbesprechung"
+    :source/quote "Über das Ergebnis der Außenprüfung ist eine Besprechung abzuhalten (Schlussbesprechung), es sei denn, dass sich nach dem Ergebnis der Außenprüfung keine Änderung der Besteuerungsgrundlagen ergibt oder dass der Steuerpflichtige auf die Besprechung verzichtet."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-201-2
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 201 Abs. 2"
+    :source/heading "Schlussbesprechung"
+    :source/quote "Besteht die Möglichkeit, dass auf Grund der Prüfungsfeststellungen ein Straf- oder Bußgeldverfahren durchgeführt werden muss, soll der Steuerpflichtige darauf hingewiesen werden, dass die straf- oder bußgeldrechtliche Würdigung einem besonderen Verfahren vorbehalten bleibt."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-202-1
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 202 Abs. 1"
+    :source/heading "Inhalt und Bekanntgabe des Prüfungsberichts"
+    :source/quote "Über das Ergebnis der Außenprüfung ergeht ein schriftlicher oder elektronischer Bericht (Prüfungsbericht).… Führt die Außenprüfung zu keiner Änderung der Besteuerungsgrundlagen, so genügt es, wenn dies dem Steuerpflichtigen schriftlich oder elektronisch mitgeteilt wird."
+    :source/elided? true
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :de-ao-202-2
+   {:source/jurisdiction [:eu :de]
+    :source/law-id "BJNR006130976"
+    :source/title "Abgabenordnung (AO)"
+    :source/article "§ 202 Abs. 2"
+    :source/heading "Inhalt und Bekanntgabe des Prüfungsberichts"
+    :source/quote "Die Finanzbehörde hat dem Steuerpflichtigen auf Antrag den Prüfungsbericht vor seiner Auswertung zu übersenden und ihm Gelegenheit zu geben, in angemessener Zeit dazu Stellung zu nehmen."
+    :source/elided? false
+    :source/revision "gesetze-im-internet.de consolidated XML, retrieved 2026-08-22"
+    :source/publisher :gesetze-im-internet
+    :source/url "https://www.gesetze-im-internet.de/ao_1977/xml.zip"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-141
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 141"
+    :source/heading "La inspección tributaria"
+    :source/quote "La inspección tributaria consiste en el ejercicio de las funciones administrativas dirigidas a: a) La investigación de los supuestos de hecho de las obligaciones tributarias para el descubrimiento de los que sean ignorados por la Administración. b) La comprobación de la veracidad y exactitud de las declaraciones presentadas por los obligados tributarios.…"
+    :source/elided? true
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-142-2
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 142.2"
+    :source/heading "Facultades de la inspección de los tributos"
+    :source/quote "Si la persona bajo cuya custodia se encontraren los lugares mencionados en el párrafo anterior se opusiera a la entrada de los funcionarios de la inspección de los tributos, se precisará la autorización escrita de la autoridad administrativa que reglamentariamente se determine. Cuando en el ejercicio de las actuaciones inspectoras sea necesario entrar en el domicilio constitucionalmente protegido del obligado tributario, se aplicará lo dispuesto en el artículo 113 de esta ley."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-147-2
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 147.2"
+    :source/heading "Iniciación del procedimiento de inspección"
+    :source/quote "Los obligados tributarios deben ser informados al inicio de las actuaciones del procedimiento de inspección sobre la naturaleza y alcance de las mismas, así como de sus derechos y obligaciones en el curso de tales actuaciones."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-148-3
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 148.3"
+    :source/heading "Alcance de las actuaciones del procedimiento de inspección"
+    :source/quote "Cuando las actuaciones del procedimiento de inspección hubieran terminado con una liquidación provisional, el objeto de las mismas no podrá regularizarse nuevamente en un procedimiento de inspección que se inicie con posterioridad salvo que concurra alguna de las circunstancias a que se refiere el párrafo a) del apartado 4 del artículo 101 de esta ley y exclusivamente en relación con los elementos de la obligación tributaria afectados por dichas circunstancias."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-150-1
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 150.1"
+    :source/heading "Plazo de las actuaciones inspectoras"
+    :source/quote "Las actuaciones del procedimiento de inspección deberán concluir en el plazo de 12 meses contado desde la fecha de notificación al obligado tributario del inicio del mismo.… No obstante, podrá ampliarse dicho plazo, con el alcance y requisitos que reglamentariamente se determinen, por otro período que no podrá exceder de 12 meses, cuando en las actuaciones concurra alguna de las siguientes circunstancias: a) Cuando revistan especial complejidad.… b) Cuando en el transcurso de las mismas se descubra que el obligado tributario ha ocultado a la Administración tributaria alguna de las actividades empresariales o profesionales que realice. Los acuerdos de ampliación del plazo legalmente previsto serán, en todo caso, motivados, con referencia a los hechos y fundamentos de derecho."
+    :source/elided? true
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-151-2
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 151.2"
+    :source/heading "Lugar de las actuaciones inspectoras"
+    :source/quote "La inspección podrá personarse sin previa comunicación en las empresas, oficinas, dependencias, instalaciones o almacenes del obligado tributario, entendiéndose las actuaciones con éste o con el encargado o responsable de los locales."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-151-3
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 151.3"
+    :source/heading "Lugar de las actuaciones inspectoras"
+    :source/quote "Los libros y demás documentación a los que se refiere el apartado 1 del artículo 142 de esta ley deberán ser examinados en el domicilio, local, despacho u oficina del obligado tributario, en presencia del mismo o de la persona que designe, salvo que el obligado tributario consienta su examen en las oficinas públicas."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-152-2
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 152.2"
+    :source/heading "Horario de las actuaciones inspectoras"
+    :source/quote "Si las actuaciones se desarrollan en los locales del interesado se respetará la jornada laboral de oficina o de la actividad que se realice en los mismos, con la posibilidad de que pueda actuarse de común acuerdo en otras horas o días."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-156-1
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 156.1"
+    :source/heading "Actas de conformidad"
+    :source/quote "Con carácter previo a la firma del acta de conformidad se concederá trámite de audiencia al interesado para que alegue lo que convenga a su derecho."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-157-1
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 157.1"
+    :source/heading "Actas de disconformidad"
+    :source/quote "Con carácter previo a la firma del acta de disconformidad se concederá trámite de audiencia al interesado para que alegue lo que convenga a su derecho."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-157-2
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 157.2"
+    :source/heading "Actas de disconformidad"
+    :source/quote "Cuando el obligado tributario o su representante no suscriba el acta o manifieste su disconformidad con la propuesta de regularización que formule la inspección de los tributos, se hará constar expresamente esta circunstancia en el acta, a la que se acompañará un informe del actuario en el que se expongan los fundamentos de derecho en que se base la propuesta de regularización."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
+    :source/fetched "2026-08-22"}
+
+   :es-lgt-34-1-f
+   {:source/jurisdiction [:eu :es]
+    :source/law-id "BOE-A-2003-23186"
+    :source/title "Ley 58/2003, de 17 de diciembre, General Tributaria"
+    :source/article "Artículo 34.1.f)"
+    :source/heading "Derechos y garantías de los obligados tributarios"
+    :source/quote "Derecho a conocer la identidad de las autoridades y personal al servicio de la Administración tributaria bajo cuya responsabilidad se tramitan las actuaciones y procedimientos tributarios en los que tenga la condición de interesado."
+    :source/elided? false
+    :source/revision "texto consolidado, fecha_actualizacion 20260626132602"
+    :source/publisher :boe
+    :source/url "https://www.boe.es/diario_boe/xml.php?id=BOE-A-2003-23186"
     :source/fetched "2026-08-22"}})
 
 (def catalog-verification
@@ -443,6 +768,35 @@
      :absence/note "Measured, not inferred from the DAC7 application date. A
                     catalog pinned to the wrong consolidation would report that
                     joint audits do not exist."}
+    {:absence/id :fr-source-not-retrievable
+     :absence/jurisdiction [:eu :fr]
+     :absence/claim "France is NOT catalogued, and the reason is retrieval, not
+                     priority. By economic size it is the jurisdiction that
+                     should have been read before Spain."
+     :absence/searched "legifrance.gouv.fr/codes/article_lc/<id> returned HTTP 403
+                        on 2026-08-22. The Légifrance bulk API (PISTE) needs
+                        credentials this workspace does not hold."
+     :absence/near-misses []
+     :absence/note "Bot protection was not circumvented, and no secondary source
+                    was used in its place. Every other quote in this catalog is a
+                    byte-exact span from an official endpoint, and one article of
+                    the Livre des procédures fiscales paraphrased from a textbook
+                    would be indistinguishable in the data from the rest. The
+                    honest state is :no-catalog, which is what [:eu :fr] returns.
+                    Next step is a PISTE credential or the DILA LEGI open-data
+                    dump, not a different reading of the same 403."}
+    {:absence/id :it-source-is-a-javascript-shell
+     :absence/jurisdiction [:eu :it]
+     :absence/claim "Italy is NOT catalogued for the same class of reason."
+     :absence/searched "normattiva.it urn:nir for DPR 600/1973 returned HTTP 200
+                        and 373 KB, of which the extractable text was 9.5 KB of
+                        site chrome and no article text at all."
+     :absence/near-misses []
+     :absence/note "A 200 that carries no law is more dangerous than a 403,
+                    because a pipeline that checks status codes records it as a
+                    successful fetch. This one was caught by asserting on the
+                    presence of an article heading in the extracted text rather
+                    than on the response code."}
     {:absence/id :jp-127-is-not-the-refusal-penalty
      :absence/jurisdiction [:jp]
      :absence/claim "国税通則法第百二十七条 is the penalty for an official who
@@ -479,8 +833,19 @@
   "The dimensions along which a jurisdiction's examination procedure can be
   read. Coverage is reported per facet, not per jurisdiction, because
   `[:us]` read on two facets and `[:jp]` read on eleven are not the same
-  thing and one number cannot say so."
-  #{:exam/power-basis
+  thing and one number cannot say so.
+
+  **This set grows when a jurisdiction reveals a question the others were
+  never asked.** Reading Germany and Spain added four, and every one of them
+  made the previously catalogued jurisdictions score LOWER, because each is a
+  question about them that nobody has answered. Coverage going down on new
+  knowledge is the correct behaviour; a denominator that only ever grew with
+  the numerator would be measuring effort, not ignorance."
+  #{:exam/impartiality          ; must the examiner weigh facts both ways? (DE 199(1))
+    :exam/duration-limit        ; is there a maximum duration?             (ES 150(1))
+    :exam/premises-entry        ; what is required to enter premises?      (ES 142(2), DE 200(3))
+    :exam/commencement-information ; what must the taxpayer be told at the start?
+    :exam/power-basis
     :exam/criminal-purpose
     :exam/advance-notice
     :exam/notice-contents
@@ -511,6 +876,7 @@
 ;;   [:any <clause> ...]           disjunction
 ;;   [:all <clause> ...]           conjunction
 ;;   [:at-least-days :k n]         facts have k, a number of days, and k >= n
+;;   [:at-least :k n] / [:at-most :k n]   generic numeric comparison
 ;;   [:has-all :k #{...}]          facts have k, a set, containing every member
 ;;
 ;; `:req/kind :official-determination` marks a condition the statute commits to
@@ -589,6 +955,11 @@
        :req/when [:all [:fact-true :field-visit?] [:fact-true :advance-notice-given?]]
        :req/test [:has-all :notice-items #{:notice/start-datetime :notice/place :notice/purpose
                                            :notice/tax-items :notice/periods :notice/records}]}
+      {:req/id :jp/notice-cabinet-order-items :req/facet :exam/notice-contents
+       :req/source :jp-kokuzei-74-9-1
+       :req/summary "第七号「その他調査の適正かつ円滑な実施に必要なものとして政令で定める事項」 — 国税通則法施行令第三十条の四は未読"
+       :req/kind :unread-instrument
+       :req/when [:all [:fact-true :field-visit?] [:fact-true :advance-notice-given?]]}
       {:req/id :jp/scope-widening-allowed :req/facet :exam/scope-limit :req/source :jp-kokuzei-74-9-4
        :req/summary "非違が疑われる事項については、事前通知の規定は適用しない"
        :req/kind :note :req/when [:fact-true :outside-notified-scope?]}]
@@ -646,6 +1017,7 @@
      :exam/scope-limit        {:facet/status :read :facet/sources [:us-irc-7605-a]}
      :exam/repeat-inspection  {:facet/status :read :facet/sources [:us-irc-7605-b]}
      :exam/representation     {:facet/status :read :facet/sources [:us-irc-7521-b2 :us-irc-7521-a1]}
+     :exam/commencement-information {:facet/status :read :facet/sources [:us-irc-7521-b1]}
      :exam/third-party-contact {:facet/status :read :facet/sources [:us-irc-7602-c :us-irc-7602-c-3]}
      :exam/identification     {:facet/status :silent :facet/sources []}
      :exam/retention-of-items {:facet/status :silent :facet/sources []}
@@ -660,7 +1032,7 @@
       {:req/id :us/no-doj-referral :req/facet :exam/criminal-purpose :req/source :us-irc-7602-d
        :req/summary "no summons may be issued if a Justice Department referral is in effect"
        :req/when [:fact-true :summons?] :req/test [:fact-false :doj-referral-in-effect?]}
-      {:req/id :us/explain-audit-process :req/facet :exam/representation :req/source :us-irc-7521-b1
+      {:req/id :us/explain-audit-process :req/facet :exam/commencement-information :req/source :us-irc-7521-b1
        :req/summary "before or at an initial interview, explain the audit process and the taxpayer's rights"
        :req/when [:all [:fact-true :in-person-interview?] [:fact-true :initial-interview?]
                        [:not [:fact-true :criminal-investigation?]]]
@@ -785,6 +1157,198 @@
                Member State. There is no EU-level power to examine a taxpayer to
                catalogue, and inventing one would be the most consequential
                error this library could make."
+      :status :nothing-to-read}}}
+
+   [:eu :de]
+   {:name "Bundesrepublik Deutschland"
+    :authority "Finanzbehörden (Außenprüfung, §§ 193–203 AO)"
+    :facets
+    {:exam/power-basis        {:facet/status :read :facet/sources [:de-ao-193-1 :de-ao-193-2]
+                               :facet/note "admissibility is a GATE, not a purpose: a field audit of a taxpayer outside § 193(1) is inadmissible unless one of § 193(2)'s three conditions holds"}
+     :exam/impartiality       {:facet/status :read :facet/sources [:de-ao-199-1]}
+     :exam/advance-notice     {:facet/status :read :facet/sources [:de-ao-197-1 :de-ao-197-2]}
+     :exam/notice-contents    {:facet/status :read :facet/sources [:de-ao-196 :de-ao-197-1]}
+     :exam/notice-exception   {:facet/status :read :facet/sources [:de-ao-197-1]
+                               :facet/note "inline in the same sentence — wenn der Prüfungszweck dadurch nicht gefährdet wird — not a separate article as in JP 74-10"}
+     :exam/commencement-information {:facet/status :partly-read :facet/sources [:de-ao-197-1]
+                                     :facet/note "the order, expected start and auditors' names are announced; AO does not require an explanation of the taxpayer's rights the way ES 147(2) and US 7521(b)(1) do"}
+     :exam/identification     {:facet/status :read :facet/sources [:de-ao-198]}
+     :exam/premises-entry     {:facet/status :read :facet/sources [:de-ao-200-3]}
+     :exam/criminal-purpose   {:facet/status :read :facet/sources [:de-ao-201-2]
+                               :facet/note "neither JP's prohibition nor US's inclusion — the criminal assessment is RESERVED to a separate procedure and the taxpayer should be told so"}
+     :exam/closing-procedure  {:facet/status :read :facet/sources [:de-ao-201-1 :de-ao-202-1 :de-ao-202-2 :de-ao-199-2]}
+     :exam/scope-limit        {:facet/status :partly-read :facet/sources [:de-ao-196]
+                               :facet/note "§ 194 defines the material scope and has not been read into requirements"}
+     :exam/representation     {:facet/status :silent :facet/sources []
+                               :facet/note "§ 80 AO governs Bevollmächtigte generally and has not been read; §§ 193–203 contain no interview-suspension right"}
+     :exam/repeat-inspection  {:facet/status :silent :facet/sources []
+                               :facet/note "§ 173 Abs. 2 Änderungssperre and the BFH case law are outside the range read"}
+     :exam/retention-of-items {:facet/status :silent :facet/sources []}
+     :exam/refusal-sanction   {:facet/status :silent :facet/sources []
+                               :facet/note "§ 200a qualifiziertes Mitwirkungsverlangen and §§ 328 ff Zwangsmittel not read"}
+     :exam/third-party-contact {:facet/status :silent :facet/sources []}
+     :exam/duration-limit     {:facet/status :silent :facet/sources []}
+     :exam/cross-border       {:facet/status :silent :facet/sources []
+                               :facet/note "supplied by the [:eu] level — see effective-facets"}}
+    :actions
+    {:exam/field-visit
+     [{:req/id :de/admissible-taxpayer :req/facet :exam/power-basis :req/source :de-ao-193-1
+       :req/summary "Außenprüfung ist zulässig bei gewerblichen / land- und forstwirtschaftlichen / freiberuflichen Steuerpflichtigen und § 147a-Fällen"
+       :req/when [:always]
+       :req/test [:any [:fact-true :business-or-professional?]
+                       [:fact-true :withholding-agent?]
+                       [:fact-true :section-193-2-condition?]]}
+      {:req/id :de/written-order :req/facet :exam/notice-contents :req/source :de-ao-196
+       :req/summary "Umfang in einer schriftlich oder elektronisch zu erteilenden Prüfungsanordnung mit Rechtsbehelfsbelehrung"
+       :req/when [:always] :req/test [:fact-true :written-audit-order?]}
+      {:req/id :de/order-announced-in-advance :req/facet :exam/advance-notice :req/source :de-ao-197-1
+       :req/summary "Prüfungsanordnung, voraussichtlicher Prüfungsbeginn und Namen der Prüfer angemessene Zeit vor Beginn bekannt zu geben"
+       :req/when [:not [:fact-true :notice-period-waived?]]
+       :req/test [:fact-true :order-announced-in-advance?]
+       :req/excused-by :de/purpose-jeopardised}
+      {:req/id :de/purpose-jeopardised :req/facet :exam/notice-exception :req/source :de-ao-197-1
+       :req/summary "wenn der Prüfungszweck dadurch nicht gefährdet wird — the authority's own assessment"
+       :req/kind :official-determination
+       :req/when [:fact-false :order-announced-in-advance?]}
+      {:req/id :de/auditor-names :req/facet :exam/notice-contents :req/source :de-ao-197-1
+       :req/summary "die Namen der Prüfer gehören zur Bekanntgabe"
+       :req/when [:fact-true :order-announced-in-advance?]
+       :req/test [:fact-true :auditor-names-announced?]}
+      {:req/id :de/identify-immediately :req/facet :exam/identification :req/source :de-ao-198
+       :req/summary "Die Prüfer haben sich bei Erscheinen unverzüglich auszuweisen"
+       :req/when [:always] :req/test [:fact-true :identified-on-arrival?]}
+      {:req/id :de/record-start-time :req/facet :exam/identification :req/source :de-ao-198
+       :req/summary "Der Beginn ist unter Angabe von Datum und Uhrzeit aktenkundig zu machen"
+       :req/when [:always] :req/test [:fact-true :start-time-recorded?]}
+      {:req/id :de/impartial :req/facet :exam/impartiality :req/source :de-ao-199-1
+       :req/summary "zugunsten wie zuungunsten des Steuerpflichtigen zu prüfen"
+       :req/kind :conduct-duty :req/when [:always]}
+      {:req/id :de/business-hours :req/facet :exam/premises-entry :req/source :de-ao-200-3
+       :req/summary "Die Außenprüfung findet während der üblichen Geschäfts- oder Arbeitszeit statt"
+       :req/when [:always] :req/test [:fact-true :during-business-hours?]}]
+
+     :exam/question          :exam/field-visit
+     :exam/inspect-books     :exam/field-visit
+     :exam/demand-production :exam/field-visit
+
+     :exam/close-examination
+     [{:req/id :de/closing-meeting :req/facet :exam/closing-procedure :req/source :de-ao-201-1
+       :req/summary "Über das Ergebnis ist eine Schlussbesprechung abzuhalten, es sei denn keine Änderung oder Verzicht"
+       :req/when [:all [:not [:fact-true :no-change-in-tax-bases?]]
+                       [:not [:fact-true :closing-meeting-waived?]]]
+       :req/test [:fact-true :closing-meeting-held?]}
+      {:req/id :de/criminal-warning :req/facet :exam/criminal-purpose :req/source :de-ao-201-2
+       :req/summary "bei möglichem Straf- oder Bußgeldverfahren soll darauf hingewiesen werden, dass die Würdigung einem besonderen Verfahren vorbehalten bleibt"
+       :req/when [:fact-true :criminal-proceedings-possible?]
+       :req/test [:fact-true :separate-procedure-warning-given?]}
+      {:req/id :de/written-report :req/facet :exam/closing-procedure :req/source :de-ao-202-1
+       :req/summary "Über das Ergebnis ergeht ein schriftlicher oder elektronischer Prüfungsbericht"
+       :req/when [:always] :req/test [:fact-true :written-report-issued?]}
+      {:req/id :de/report-before-evaluation :req/facet :exam/closing-procedure :req/source :de-ao-202-2
+       :req/summary "auf Antrag den Prüfungsbericht vor seiner Auswertung übersenden und Gelegenheit zur Stellungnahme geben"
+       :req/when [:fact-true :report-requested-in-advance?]
+       :req/test [:fact-true :report-sent-before-evaluation?]}]}
+    :out-of-scope {}}
+
+   [:eu :es]
+   {:name "Reino de España"
+    :authority "Inspección de los tributos (Ley 58/2003, arts. 141–159)"
+    :facets
+    {:exam/power-basis        {:facet/status :read :facet/sources [:es-lgt-141]}
+     :exam/commencement-information {:facet/status :read :facet/sources [:es-lgt-147-2]}
+     :exam/premises-entry     {:facet/status :read :facet/sources [:es-lgt-142-2 :es-lgt-151-3 :es-lgt-152-2]}
+     :exam/duration-limit     {:facet/status :read :facet/sources [:es-lgt-150-1]}
+     :exam/repeat-inspection  {:facet/status :partly-read :facet/sources [:es-lgt-148-3]
+                               :facet/note "the exception routes to art 101.4.a), which this catalog has not read"}
+     :exam/closing-procedure  {:facet/status :read :facet/sources [:es-lgt-156-1 :es-lgt-157-1 :es-lgt-157-2]}
+     :exam/identification     {:facet/status :read :facet/sources [:es-lgt-34-1-f]
+                               :facet/note "framed as a taxpayer RIGHT to know the identity, not as a duty to show a card on appearing (contrast DE 198, JP 74-13)"}
+     :exam/advance-notice     {:facet/status :read :facet/sources [:es-lgt-151-2]
+                               :facet/note "read and found to point the other way: the inspection may appear WITHOUT prior communication"}
+     :exam/notice-contents    {:facet/status :out-of-scope :facet/sources []}
+     :exam/notice-exception   {:facet/status :out-of-scope :facet/sources []}
+     :exam/scope-limit        {:facet/status :partly-read :facet/sources [:es-lgt-148-3]}
+     :exam/impartiality       {:facet/status :silent :facet/sources []}
+     :exam/criminal-purpose   {:facet/status :silent :facet/sources []}
+     :exam/representation     {:facet/status :silent :facet/sources []}
+     :exam/third-party-contact {:facet/status :silent :facet/sources []}
+     :exam/retention-of-items {:facet/status :silent :facet/sources []}
+     :exam/refusal-sanction   {:facet/status :silent :facet/sources []}
+     :exam/cross-border       {:facet/status :silent :facet/sources []}}
+    :actions
+    {:exam/field-visit
+     [{:req/id :es/inspection-function :req/facet :exam/power-basis :req/source :es-lgt-141
+       :req/summary "el ejercicio de las funciones administrativas de investigación y comprobación"
+       :req/kind :official-determination :req/when [:always]}
+      {:req/id :es/commencement-information :req/facet :exam/commencement-information
+       :req/source :es-lgt-147-2
+       :req/summary "informar al inicio sobre la naturaleza y alcance, así como de sus derechos y obligaciones"
+       :req/when [:always] :req/test [:fact-true :commencement-information-given?]}
+      {:req/id :es/no-prior-communication-needed :req/facet :exam/advance-notice
+       :req/source :es-lgt-151-2
+       :req/summary "la inspección podrá personarse sin previa comunicación"
+       :req/kind :note :req/when [:always]}
+      {:req/id :es/entry-authorisation :req/facet :exam/premises-entry :req/source :es-lgt-142-2
+       :req/summary "si el custodio se opusiera a la entrada, se precisará la autorización escrita de la autoridad administrativa"
+       :req/when [:fact-true :entry-opposed?]
+       :req/test [:fact-true :written-entry-authorisation?]}
+      {:req/id :es/protected-domicile :req/facet :exam/premises-entry :req/source :es-lgt-142-2
+       :req/summary "domicilio constitucionalmente protegido — se aplicará lo dispuesto en el artículo 113, que este catálogo no ha leído"
+       :req/kind :unread-instrument
+       :req/when [:fact-true :constitutionally-protected-domicile?]}
+      {:req/id :es/books-at-taxpayer-premises :req/facet :exam/premises-entry :req/source :es-lgt-151-3
+       :req/summary "los libros deberán ser examinados en el domicilio del obligado, en su presencia, salvo que consienta su examen en oficinas públicas"
+       :req/when [:fact-true :books-examined-at-public-office?]
+       :req/test [:fact-true :taxpayer-consented-to-office-examination?]}
+      {:req/id :es/working-hours :req/facet :exam/premises-entry :req/source :es-lgt-152-2
+       :req/summary "se respetará la jornada laboral, salvo actuación de común acuerdo en otras horas o días"
+       :req/when [:always]
+       :req/test [:any [:fact-true :during-business-hours?] [:fact-true :out-of-hours-agreed?]]}
+      {:req/id :es/twelve-month-limit :req/facet :exam/duration-limit :req/source :es-lgt-150-1
+       :req/summary "las actuaciones deberán concluir en el plazo de 12 meses desde la notificación del inicio"
+       :req/when [:always]
+       :req/test [:any [:at-most :elapsed-months 12] [:fact-true :extension-granted?]]}
+      {:req/id :es/extension-reasoned :req/facet :exam/duration-limit :req/source :es-lgt-150-1
+       :req/summary "los acuerdos de ampliación serán, en todo caso, motivados, y no podrán exceder de otros 12 meses"
+       :req/when [:fact-true :extension-granted?]
+       :req/test [:all [:fact-true :extension-reasoned?] [:at-most :elapsed-months 24]]}]
+
+     :exam/question          :exam/field-visit
+     :exam/inspect-books     :exam/field-visit
+     :exam/demand-production :exam/field-visit
+
+     :exam/re-examine
+     [{:req/id :es/inspection-function :req/facet :exam/power-basis :req/source :es-lgt-141
+       :req/summary "el ejercicio de las funciones administrativas de investigación y comprobación"
+       :req/kind :official-determination :req/when [:always]}
+      {:req/id :es/provisional-liquidation-bar :req/facet :exam/repeat-inspection
+       :req/source :es-lgt-148-3
+       :req/summary "terminadas con liquidación provisional, el objeto no podrá regularizarse nuevamente"
+       :req/when [:fact-true :ended-with-provisional-liquidation?]
+       :req/test [:fact-false :same-object?]}
+      {:req/id :es/art-101-4-a-exception :req/facet :exam/repeat-inspection
+       :req/source :es-lgt-148-3
+       :req/summary "salvo que concurra alguna de las circunstancias del artículo 101.4.a), que este catálogo no ha leído"
+       :req/kind :unread-instrument
+       :req/when [:all [:fact-true :ended-with-provisional-liquidation?] [:fact-true :same-object?]]}]
+
+     :exam/close-examination
+     [{:req/id :es/hearing-before-acta :req/facet :exam/closing-procedure :req/source :es-lgt-156-1
+       :req/summary "con carácter previo a la firma del acta se concederá trámite de audiencia"
+       :req/when [:always] :req/test [:fact-true :hearing-granted?]}
+      {:req/id :es/disconformity-report :req/facet :exam/closing-procedure :req/source :es-lgt-157-2
+       :req/summary "en disconformidad, se acompañará un informe del actuario con los fundamentos de derecho"
+       :req/when [:fact-true :taxpayer-disagrees?]
+       :req/test [:fact-true :actuary-report-attached?]}]}
+    :out-of-scope
+    {:exam/notice-contents
+     {:reason "Art 151.2 lets the inspection appear without prior communication,
+               so there is no statutory advance notice for which contents could
+               be prescribed. Art 147.2 prescribes what must be said AT the
+               start, which is :exam/commencement-information, not this."
+      :status :nothing-to-read}
+     :exam/notice-exception
+     {:reason "An exception to a requirement that does not exist."
       :status :nothing-to-read}}}})
 
 ;; ---------------------------------------------------------------------------
@@ -821,6 +1385,16 @@
                             :no (rest clause))
       :all          (reduce #(get tri-and [%1 (eval-clause %2 facts)])
                             :yes (rest clause))
+      :at-least     (let [v (get facts a)]
+                      (cond (not (contains? facts a)) :unknown
+                            (not (number? v)) :unknown
+                            (>= v b) :yes
+                            :else :no))
+      :at-most      (let [v (get facts a)]
+                      (cond (not (contains? facts a)) :unknown
+                            (not (number? v)) :unknown
+                            (<= v b) :yes
+                            :else :no))
       :at-least-days (let [v (get facts a)]
                        (cond (not (contains? facts a)) :unknown
                              (not (number? v)) :unknown
@@ -842,13 +1416,71 @@
         (sequential? j) (vec j)
         :else j))
 
+(defn levels
+  "Jurisdictions are PATHS, not codes, and rules attach at a level.
+
+      [:eu :de]  ->  [[:eu] [:eu :de]]
+
+  A German field audit is governed by German law; the same officer sitting in
+  a Spanish joint audit is additionally capped by Directive 2011/16/EU. Both
+  levels are read and the more specific one wins where they overlap."
+  [j]
+  (let [p (normalize j)]
+    (mapv #(vec (take % p)) (range 1 (inc (count p))))))
+
 (defn jurisdiction
-  "The catalog entry, or nil. nil means NOT READ, never NO REQUIREMENTS."
+  "The catalog entry for THIS EXACT level, or nil. nil means NOT READ, never
+  NO REQUIREMENTS. For the merged view of a path use `effective-facets`."
   [j]
   (get jurisdictions (normalize j)))
 
+(defn catalogued-levels [j] (filterv #(contains? jurisdictions %) (levels j)))
+(defn unchecked-levels  [j] (filterv #(not (contains? jurisdictions %)) (levels j)))
+
+(def ^:private informative? #{:read :partly-read})
+
+(defn effective-facets
+  "Facet statuses for a path. The most specific level wins, with one exception
+  in each direction, and both exceptions were found by a test.
+
+  **A parent contributes only the facets it actually read.** The European Union
+  marks thirteen facets `:out-of-scope` because the Union has no examination
+  power — that is a statement about the Union, not about Germany. Letting it
+  propagate would report German re-examination law as deliberately out of scope
+  when in truth nobody has read it. So `:out-of-scope` and `:silent` stop at the
+  level that declared them.
+
+  **And a child's `:silent` does not overwrite a parent's `:read`.** `:silent`
+  means *this level says nothing*, which cannot outrank *that level said
+  something*. Germany's own entry is silent on cross-border because the
+  Directive is where that law lives; the merged view must still read
+  `:read`, sourced from `[:eu]`. A child's `:out-of-scope` DOES win, because
+  that is a decision rather than an absence.
+
+  Each entry carries `:facet/from`, the level that supplied it."
+  [j]
+  (let [ls (catalogued-levels j)
+        own (last ls)
+        stamp (fn [l m] (into {} (map (fn [[k v]] [k (assoc v :facet/from l)])) m))
+        base (stamp own (:facets (get jurisdictions own)))]
+    (reduce (fn [acc l]
+              (let [f (stamp l (:facets (get jurisdictions l)))]
+                (reduce-kv (fn [a k v]
+                             (if (and (informative? (:facet/status v))
+                                      (not (informative? (get-in a [k :facet/status]))))
+                               ;; keep the child's note if it had one to give
+                               (assoc a k (merge v (select-keys (get a k) [:facet/note])))
+                               a))
+                           acc f)))
+            base
+            (reverse (butlast ls)))))
+
 (defn covered?
-  "Is this jurisdiction in the catalog at all?"
+  "Is this EXACT level in the catalog?
+
+  Deliberately not level-aware: `[:eu :fr]` must not count as covered merely
+  because `[:eu]` is. France's examination procedure is unread, and a coverage
+  report that said otherwise would be the flattering answer."
   [j]
   (some? (jurisdiction j)))
 
@@ -885,8 +1517,17 @@
                                   :when r]
                               [k r]))]))))
 
-(defn- requirements-for [jpath action]
-  (get-in normalized-actions [jpath action]))
+(defn- requirements-for
+  "Requirements from every catalogued level of the path, parent first.
+
+  A German officer in a Spanish joint audit answers to both the Directive and
+  German law; the requirement list is the union, not the more specific one."
+  [j action]
+  (let [rs (into [] (comp (map #(get-in normalized-actions [% action]))
+                          (remove nil?)
+                          cat)
+                 (catalogued-levels j))]
+    (when (seq rs) rs)))
 
 ;; ---------------------------------------------------------------------------
 ;; The one question
@@ -902,24 +1543,26 @@
   ([j action] (examination j action {}))
   ([j action facts]
    (let [jpath (normalize j)
-         entry (jurisdiction jpath)
-         reqs (when entry (requirements-for jpath action))
+         cls (catalogued-levels jpath)
+         unchecked (unchecked-levels jpath)
+         reqs (requirements-for jpath action)
          base {:examlaw/jurisdiction jpath
-               :examlaw/action action}]
+               :examlaw/action action
+               :examlaw/levels-read cls}]
      (cond
-       (nil? entry)
+       (empty? cls)
        (assoc base :examlaw/coverage :none
-              :examlaw/unchecked [jpath]
+              :examlaw/unchecked unchecked
               :examlaw/reason :jurisdiction-not-in-catalog
               :examlaw/requirements [])
 
        (nil? reqs)
        (assoc base :examlaw/coverage :none
-              :examlaw/unchecked [jpath]
+              :examlaw/unchecked (if (seq unchecked) unchecked [jpath])
               :examlaw/reason (if (contains? actions action)
                                 :action-not-catalogued-here
                                 :unknown-action)
-              :examlaw/out-of-scope (:out-of-scope entry)
+              :examlaw/out-of-scope (:out-of-scope (get jurisdictions (last cls)))
               :examlaw/requirements [])
 
        :else
@@ -937,6 +1580,13 @@
                                ;; safeguard is engaged is not evidence that it is not.
                                (= kind :official-determination) :official-determination
                                (= kind :two-jurisdiction) :two-jurisdiction
+                               ;; a duty on the officer's conduct that no record
+                               ;; can establish (DE 199(1): examine for AND against)
+                               (= kind :conduct-duty) :conduct-duty
+                               ;; the statute routes this to an instrument this
+                               ;; catalog has not read (JP 74-9 item 7 -> 政令,
+                               ;; ES 142(2) -> art 113). Never a pass.
+                               (= kind :unread-instrument) :unread-instrument
                                (nil? (:req/test r)) :unverified
                                :else (case (eval-clause (:req/test r) facts)
                                        :yes :met
@@ -957,13 +1607,16 @@
              by (group-by :req/status evaluated)]
          (assoc base
                 :examlaw/coverage :checked
+                :examlaw/unchecked unchecked
                 :examlaw/requirements evaluated
                 :examlaw/met (mapv :req/id (:met by))
                 :examlaw/unmet (mapv :req/id (:unmet by))
                 :examlaw/unverified (mapv :req/id (:unverified by))
                 :examlaw/official-determination (mapv :req/id (:official-determination by))
                 :examlaw/deferred (mapv :req/id (:deferred-to-determination by))
-                :examlaw/two-jurisdiction (mapv :req/id (:two-jurisdiction by))))))))
+                :examlaw/two-jurisdiction (mapv :req/id (:two-jurisdiction by))
+                :examlaw/conduct-duty (mapv :req/id (:conduct-duty by))
+                :examlaw/unread-instrument (mapv :req/id (:unread-instrument by))))))))
 
 (defn disposition
   "One of four values. This is the function to read, not `:examlaw/met`.
@@ -987,7 +1640,9 @@
     (or (seq (:examlaw/unverified result))
         (seq (:examlaw/official-determination result))
         (seq (:examlaw/deferred result))
-        (seq (:examlaw/two-jurisdiction result))) :requires-official-determination
+        (seq (:examlaw/two-jurisdiction result))
+        (seq (:examlaw/conduct-duty result))
+        (seq (:examlaw/unread-instrument result))) :requires-official-determination
     :else :no-catalogued-requirement-unmet))
 
 (defn authorized?
@@ -1051,10 +1706,12 @@
   is nothing to explain. A facet that IS marked out-of-scope and resolves to
   nil here is a catalog defect, and a test says so."
   [j facet]
-  (when-let [entry (jurisdiction j)]
-    (when (= :out-of-scope (get-in entry [:facets facet :facet/status]))
-      (or (get-in entry [:out-of-scope facet])
-          (:out-of-scope-default entry)))))
+  (when (= :out-of-scope (get-in (effective-facets j) [facet :facet/status]))
+    (some (fn [l]
+            (let [e (get jurisdictions l)]
+              (when (= :out-of-scope (get-in e [:facets facet :facet/status]))
+                (or (get-in e [:out-of-scope facet]) (:out-of-scope-default e)))))
+          (reverse (catalogued-levels j)))))
 
 (defn depth
   "Per-facet partition for one jurisdiction. `:read`, `:partly-read`,
@@ -1062,8 +1719,8 @@
   buckets once double-counted a facet that was both read and partly out of
   scope."
   [j]
-  (when-let [entry (jurisdiction j)]
-    (let [f (:facets entry)
+  (when (seq (catalogued-levels j))
+    (let [f (effective-facets j)
           by (reduce (fn [acc facet]
                        (let [st (get-in f [facet :facet/status] :silent)]
                          (update acc st (fnil conj []) facet)))
