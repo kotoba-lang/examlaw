@@ -411,3 +411,231 @@
     (is (= :silent (get-in law/jurisdictions [[:jp] :facets :exam/cross-border :facet/status])))
     (is (nil? (law/out-of-scope-reason [:jp] :exam/cross-border)))
     (is (some? (get-in law/jurisdictions [[:jp] :facets :exam/cross-border :facet/note])))))
+
+;; ---------------------------------------------------------------------------
+;; Jurisdictions are paths, and a parent level does not speak for its children
+;; ---------------------------------------------------------------------------
+
+(deftest levels-resolve-parent-then-child
+  (is (= [[:eu] [:eu :de]] (law/levels [:eu :de])))
+  (is (= [[:jp]] (law/levels [:jp])))
+
+  (testing "the child supplies examination law, the parent supplies cooperation"
+    (let [f (law/examination [:eu :de] :exam/field-visit {})
+          j (law/examination [:eu :de] :exam/joint-audit {})]
+      (is (= :checked (:examlaw/coverage f)))
+      (is (contains? (into #{} (map :req/id) (:examlaw/requirements f)) :de/admissible-taxpayer))
+      (is (= :checked (:examlaw/coverage j)))
+      (is (contains? (into #{} (map :req/id) (:examlaw/requirements j)) :eu/home-power-ceiling)
+          "Article 12a reaches a German officer through the [:eu] level")))
+
+  (testing "an uncatalogued member state is unchecked AT ITS OWN LEVEL"
+    (let [r (law/examination [:eu :fr] :exam/field-visit {})]
+      (is (= :none (:examlaw/coverage r)))
+      (is (= [[:eu :fr]] (:examlaw/unchecked r))
+          "[:eu] being catalogued must not make France look covered")
+      (is (false? (law/authorized? r)))
+      (is (false? (law/covered? [:eu :fr])))))
+
+  (testing "a parent's :out-of-scope does not propagate to a child"
+    (is (= :out-of-scope (get-in law/jurisdictions [[:eu] :facets :exam/repeat-inspection :facet/status]))
+        "the Union has no re-examination law because it has no examination law")
+    (is (= :silent (get-in (law/effective-facets [:eu :de]) [:exam/repeat-inspection :facet/status]))
+        "but German re-examination law is UNREAD, not deliberately out of scope")
+    (is (nil? (law/out-of-scope-reason [:eu :de] :exam/repeat-inspection)))
+    (testing "while the parent's :read facets DO reach the child"
+      (is (= :read (get-in (law/effective-facets [:eu :de]) [:exam/cross-border :facet/status]))))))
+
+(deftest joint-audit-now-computes-for-two-member-states
+  (let [facts {:requested-authority-agreed? true :host-arrangements-followed? true
+               :business-or-professional? true :written-audit-order? true
+               :order-announced-in-advance? true :auditor-names-announced? true
+               :identified-on-arrival? true :start-time-recorded? true
+               :during-business-hours? true
+               :commencement-information-given? true :elapsed-months 6
+               :entry-opposed? false :constitutionally-protected-domicile? false
+               :books-examined-at-public-office? false}
+        r (law/joint-audit [:eu :es] [:eu :de] :exam/inspect-books facts)]
+    (is (= :checked (:examlaw/coverage r)) "both member states are read, so the pair resolves")
+    (is (empty? (:examlaw/unmet r)))
+    (is (= :requires-official-determination (:examlaw/disposition r))
+        "12a(2)'s home-state ceiling and each state's own official findings remain"))
+
+  (testing "and it still refuses when the home state is unread"
+    (is (= :none (:examlaw/coverage (law/joint-audit [:eu :es] [:eu :fr] :exam/inspect-books {}))))))
+
+;; ---------------------------------------------------------------------------
+;; Germany
+;; ---------------------------------------------------------------------------
+
+(def de-clean
+  {:business-or-professional? true :written-audit-order? true
+   :order-announced-in-advance? true :auditor-names-announced? true
+   :identified-on-arrival? true :start-time-recorded? true
+   :during-business-hours? true})
+
+(deftest de-field-audit
+  (testing "§193 is an ADMISSIBILITY gate — a taxpayer outside it cannot be field-audited at all"
+    (let [r (law/examination [:eu :de] :exam/field-visit
+                             (assoc de-clean :business-or-professional? false
+                                    :withholding-agent? false :section-193-2-condition? false))]
+      (is (= [:de/admissible-taxpayer] (:examlaw/unmet r)))
+      (is (= :blocked (law/disposition r))))
+    (testing "and neither JP nor US has such a gate — their power sections name no class of taxpayer"
+      (let [ids (fn [j a] (into #{} (map :req/facet) (:examlaw/requirements (law/examination j a {}))))]
+        (is (contains? (ids [:eu :de] :exam/field-visit) :exam/power-basis))
+        (is (contains? (ids [:jp] :exam/field-visit) :exam/power-basis))
+        (is (= :official-determination
+               (:req/kind (first (filter #(= :jp/necessity (:req/id %))
+                                         (:examlaw/requirements (law/examination [:jp] :exam/field-visit {}))))))
+            "JP gates on the officer's finding of necessity, not on who the taxpayer is"))))
+
+  (testing "§196 requires a WRITTEN order — a perfectly announced oral audit is blocked"
+    (is (= [:de/written-order]
+           (:examlaw/unmet (law/examination [:eu :de] :exam/field-visit
+                                            (assoc de-clean :written-audit-order? false))))))
+
+  (testing "§197(1) defers to the authority when the audit purpose would be jeopardised"
+    (let [r (law/examination [:eu :de] :exam/field-visit
+                             (assoc de-clean :order-announced-in-advance? false))]
+      (is (empty? (:examlaw/unmet r)))
+      (is (contains? (set (:examlaw/deferred r)) :de/order-announced-in-advance))
+      (is (contains? (set (:examlaw/official-determination r)) :de/purpose-jeopardised))))
+
+  (testing "§198 is stronger than JP 74-13: identify UNVERZÜGLICH on appearing, not on request"
+    (is (re-find #"unverzüglich" (:source/quote (law/source :de-ao-198))))
+    (is (re-find #"請求があつたとき" (:source/quote (law/source :jp-kokuzei-74-13))))
+    (is (= [:de/identify-immediately]
+           (:examlaw/unmet (law/examination [:eu :de] :exam/field-visit
+                                            (assoc de-clean :identified-on-arrival? false))))))
+
+  (testing "§199(1) is a conduct duty no record can establish, and it is never a pass"
+    (let [r (law/examination [:eu :de] :exam/field-visit de-clean)]
+      (is (= [:de/impartial] (:examlaw/conduct-duty r)))
+      (is (false? (law/authorized? r)))))
+
+  (testing "§201(2) is a THIRD answer on criminal purpose — neither JP's ban nor US's inclusion"
+    (let [r (law/examination [:eu :de] :exam/close-examination
+                             {:criminal-proceedings-possible? true
+                              :separate-procedure-warning-given? false
+                              :written-report-issued? true :no-change-in-tax-bases? true})]
+      (is (= [:de/criminal-warning] (:examlaw/unmet r))
+          "Germany neither forbids nor absorbs the criminal question — it reserves it and requires a warning")))
+
+  (testing "§201(1) closing meeting is required unless no change or waiver"
+    (is (= [:de/closing-meeting]
+           (:examlaw/unmet (law/examination [:eu :de] :exam/close-examination
+                                            {:no-change-in-tax-bases? false
+                                             :closing-meeting-waived? false
+                                             :closing-meeting-held? false
+                                             :written-report-issued? true}))))
+    (is (empty? (:examlaw/unmet (law/examination [:eu :de] :exam/close-examination
+                                                 {:no-change-in-tax-bases? true
+                                                  :written-report-issued? true}))))))
+
+;; ---------------------------------------------------------------------------
+;; Spain
+;; ---------------------------------------------------------------------------
+
+(def es-clean
+  {:commencement-information-given? true :entry-opposed? false
+   :constitutionally-protected-domicile? false :books-examined-at-public-office? false
+   :during-business-hours? true :elapsed-months 6})
+
+(deftest es-inspection
+  (testing "art 151.2: Spain may appear WITHOUT prior communication — the opposite of DE 197(1)"
+    (let [es (law/examination [:eu :es] :exam/field-visit es-clean)
+          de (law/examination [:eu :de] :exam/field-visit
+                              (assoc de-clean :order-announced-in-advance? false))]
+      (is (empty? (:examlaw/unmet es)))
+      (is (not (contains? (into #{} (map :req/id) (:examlaw/requirements es))
+                          :es/advance-notice))
+          "there is no advance-notice requirement to fail")
+      (is (contains? (set (:examlaw/deferred de)) :de/order-announced-in-advance)
+          "Germany has to reach for an exception for the same conduct")))
+
+  (testing "art 150.1: twelve months, and an extension must be reasoned and capped"
+    (is (= [:es/twelve-month-limit]
+           (:examlaw/unmet (law/examination [:eu :es] :exam/field-visit
+                                            (assoc es-clean :elapsed-months 14
+                                                   :extension-granted? false)))))
+    (is (= [:es/extension-reasoned]
+           (:examlaw/unmet (law/examination [:eu :es] :exam/field-visit
+                                            (assoc es-clean :elapsed-months 14
+                                                   :extension-granted? true
+                                                   :extension-reasoned? false)))))
+    (is (empty? (:examlaw/unmet (law/examination [:eu :es] :exam/field-visit
+                                                 (assoc es-clean :elapsed-months 20
+                                                        :extension-granted? true
+                                                        :extension-reasoned? true)))))
+    (testing "and no other catalogued jurisdiction has a duration limit at all"
+      (doseq [j [[:jp] [:us] [:eu :de]]]
+        (is (not= :read (get-in (law/effective-facets j) [:exam/duration-limit :facet/status]))))))
+
+  (testing "art 142.2: opposed entry needs written administrative authorisation"
+    (is (= [:es/entry-authorisation]
+           (:examlaw/unmet (law/examination [:eu :es] :exam/field-visit
+                                            (assoc es-clean :entry-opposed? true
+                                                   :written-entry-authorisation? false))))))
+
+  (testing "art 148.3: a provisional liquidation bars re-regularising the same object"
+    (is (= [:es/provisional-liquidation-bar]
+           (:examlaw/unmet (law/examination [:eu :es] :exam/re-examine
+                                            {:ended-with-provisional-liquidation? true
+                                             :same-object? true}))))))
+
+;; ---------------------------------------------------------------------------
+;; :unread-instrument — the law points somewhere this catalog has not been
+;; ---------------------------------------------------------------------------
+
+(deftest unread-instrument-is-never-a-pass
+  (testing "ES art 142.2 routes a protected domicile to art 113, which is unread"
+    (let [r (law/examination [:eu :es] :exam/field-visit
+                             (assoc es-clean :constitutionally-protected-domicile? true))]
+      (is (= [:es/protected-domicile] (:examlaw/unread-instrument r)))
+      (is (empty? (:examlaw/unmet r)) "unread is not violated")
+      (is (= :requires-official-determination (law/disposition r)))
+      (is (false? (law/authorized? r)) "and it is certainly not permitted")))
+
+  (testing "each non-machine-satisfiable bucket ALONE keeps the answer open"
+    ;; Every catalogued examination action carries more than one of these at
+    ;; once, so a catalog-driven test cannot tell which bucket did the work.
+    ;; Deleting :examlaw/unread-instrument from `disposition` left the whole
+    ;; suite green until this existed.
+    (let [clean {:examlaw/coverage :checked :examlaw/unmet [] :examlaw/unverified []
+                 :examlaw/official-determination [] :examlaw/deferred []
+                 :examlaw/two-jurisdiction [] :examlaw/conduct-duty []
+                 :examlaw/unread-instrument []}]
+      (is (= :no-catalogued-requirement-unmet (law/disposition clean)))
+      (is (true? (law/authorized? clean)))
+      (doseq [k [:examlaw/unmet :examlaw/unverified :examlaw/official-determination
+                 :examlaw/deferred :examlaw/two-jurisdiction :examlaw/conduct-duty
+                 :examlaw/unread-instrument]]
+        (let [r (assoc clean k [:something])]
+          (is (false? (law/authorized? r))
+              (str k " alone must keep authorized? false"))
+          (is (= (if (= k :examlaw/unmet) :blocked :requires-official-determination)
+                 (law/disposition r))
+              (str k " alone must decide the disposition"))))))
+
+  (testing "JP 74-9 item seven delegates to 政令 and this catalog has not read it"
+    (let [r (law/examination [:jp] :exam/field-visit jp-clean-field-visit)]
+      (is (= [:jp/notice-cabinet-order-items] (:examlaw/unread-instrument r)))
+      (is (empty? (:examlaw/unmet r))
+          "the six statutory items are satisfied; the seventh is unanswerable here"))))
+
+;; ---------------------------------------------------------------------------
+;; The denominator grows when a jurisdiction reveals a new question
+;; ---------------------------------------------------------------------------
+
+(deftest new-facets-lower-previously-catalogued-coverage
+  (testing "the four facets Germany and Spain revealed are silent for Japan and the US"
+    (doseq [f [:exam/impartiality :exam/duration-limit :exam/premises-entry]]
+      (is (= :silent (get-in (law/effective-facets [:jp]) [f :facet/status] :silent))
+          (str "JP " f " must read as silent, not as absent from the question set"))))
+  (testing "so both lose ground in depth, which is the honest direction"
+    (is (= 18 (count law/facet-universe)))
+    (doseq [j [[:jp] [:us] [:eu :de] [:eu :es]]]
+      (let [d (law/depth j)]
+        (is (= 18 (:of d)))
+        (is (= (:of d) (+ (:read d) (:partly-read d) (:out-of-scope d) (:silent d))))))))
