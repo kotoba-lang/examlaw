@@ -386,7 +386,7 @@ power*, as a catalog, with a denominator.
 ## Run the tests
 
 ```bash
-nbb --classpath "src:test" run-tests.cljs    # primary
+nbb --classpath "src:test" run-tests.cljk    # primary
 clojure -M:test                              # JVM compat path, same file
 ```
 
