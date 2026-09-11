@@ -386,8 +386,8 @@ power*, as a catalog, with a denominator.
 ## Run the tests
 
 ```bash
-nbb --classpath "src:test" run-tests.cljk    # primary
-clojure -M:test                              # JVM compat path, same file
+kbb --backend sci --classpath "src:test" run-tests.cljk    # primary
+kbb -M:test                              # JVM compat path, same file
 ```
 
 24 tests, 670 assertions. The suite has been shown to fail in both directions,
