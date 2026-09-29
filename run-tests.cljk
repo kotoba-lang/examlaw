@@ -1,5 +1,5 @@
 #!/usr/bin/env kbb
-;; Primary runner. `.cljc` first, nbb over JVM (CLAUDE.md runtime order).
+;; Primary runner. `.cljc` first, nbb over JVM (AGENTS.md runtime order).
 ;; The JVM `:test` alias in deps.edn runs the same file and is the compat path.
 (ns run-tests
   (:require [cljs.test :as t]
